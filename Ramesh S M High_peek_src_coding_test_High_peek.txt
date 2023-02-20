@@ -1,0 +1,90 @@
+package coding_test;
+
+import java.util.Scanner;
+
+public class High_peek {
+
+public static void main(String[] args) {
+			Scanner sc=new Scanner(System.in);
+			System.out.println("Enter the number of jobs");
+			int[] stime=new int[sc.nextInt()];
+			int[] etime=new int[stime.length];
+			int[] profit=new int[stime.length];
+			System.out.println("Enter job start time, end time, and earnings");
+			for (int i = 0; i < stime.length; i++) {
+				stime[i]=sc.nextInt();
+				etime[i]=sc.nextInt();
+				profit[i]=sc.nextInt();
+			}
+			int x=0;
+			int sum=0;
+			for (int i = 0; i < profit.length; i++) {
+				sum=sum+profit[i];
+			}
+			if(sum>=900){
+				x=2;
+				sum=400;
+			}
+			else if(sum<900)
+			{
+				x=1;
+				sum=100;
+			}
+			System.out.println("The number of tasks and earnings available for others\nTask: "+x+"\nEarnings: "+sum);
+		}
+	}
+
+==================================
+Sample Input: 1
+Enter the number of Jobs
+3
+Enter job start time, end time, and earnings
+0900
+1030
+100
+1000
+1200
+500
+1100
+1200
+300
+output 1====>
+The number of tasks and earnings available for others
+Task: 2
+Earnings: 400
+==========================================
+Sample Input: 2
+Enter the number of Jobs
+3
+Enter job start time, end time, and earnings
+0900
+1000
+250
+0945
+1200
+550
+1130
+1500
+150
+output 2===>
+The number of tasks and earnings available for others
+Task: 2
+Earnings: 400
+==========================================
+Sample Input:3
+Enter the number of Jobs
+3
+Enter job start time, end time, and earnings
+0900
+1030
+100
+1000
+1200
+100
+1100
+1200
+100
+output 3====>
+The number of tasks and earnings available for others
+Task: 1
+Earnings: 100
